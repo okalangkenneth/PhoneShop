@@ -3,6 +3,7 @@
 ## Table of Contents.
 1. [Introduction](#introduction)
 2. [System Architecture](#system-architecture)
+3. [Non-Functional Requirements](#non-functional-requirements)
 
 ## Introduction
 
@@ -20,10 +21,9 @@ Overall, this project will showcase the benefits of microservices architecture, 
 This diagram shows the different components of the e-commerce application and how they communicate with each other. Each of the microservices will have its own database. The microservices communicate with each other through RESTful APIs or message queues. The dotted lines indicate asynchronous while the solid lines indicate synchronous communication. The Identity Server provides a centralized authentication and authorization mechanism for the microservices ensuring that the application is secure and compliant. Azure Service Bus enables messaging and communication between the microservices, ensuring that the application is highly available and reliable.
 The microservices will be designed using the N-Layer implementation with the Repository Pattern, ensuring that the business logic and data access layers are separated.
 
-Overview of the architecture and design of the application
-Explanation of the design patterns used in the application
-Description of the microservices and their roles in the application
-Explanation of the data models and their relationships
+## Non-Functional Requirements.
+The Non-Functional Requirements section describes the quality attributes that the system must possess in addition to its functional requirements. These attributes are critical to ensuring that the system performs optimally, is reliable, and is easy to maintain. In this section, we describe the non-functional requirements for our e-commerce application, including performance, security, scalability, reliability, maintainability, usability, testability, accessibility, and technology requirements. These requirements will be used to guide the design, development, and testing of the system and ensure that it meets the expectations of its users.
+
 ## Technologies Used
 List of the technologies used in the application
 Explanation of why each technology was chosen
