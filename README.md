@@ -14,6 +14,11 @@ The project will address non-functional requirements such as performance, securi
 
 Overall, this project will showcase the benefits of microservices architecture, Identity Server, Azure Service Bus, N-Layer implementation, Repository Pattern, Async and Sync communication, and Entity Framework Core with a SQL Server database. The e-commerce application will provide a comprehensive solution for businesses of all sizes.
 ## System Architecture.
+
+![image](https://user-images.githubusercontent.com/68539411/223565684-642f3c07-fdc7-4881-b000-70360f859577.png)
+
+This diagram shows the different components of the e-commerce application and how they communicate with each other. Each of the microservices will have its own database. The microservices communicate with each other through RESTful APIs or message queues, while Identity Server provides a centralized authentication and authorization mechanism for the microservices. Azure Service Bus enables messaging and asynchronous communication between the microservices, ensuring that the application is highly available and reliable.
+
 Overview of the architecture and design of the application
 Explanation of the design patterns used in the application
 Description of the microservices and their roles in the application
