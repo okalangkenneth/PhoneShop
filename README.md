@@ -1,8 +1,8 @@
 # EcomGateway: A Microservice-based E-commerce Gateway with Identity Server and Azure Service Bus Integration
 
 ## Table of Contents.
-[Introduction](#introduction)
-[System Architecture](#system-architecture)
+1. [Introduction](#introduction)
+2. [System Architecture](#system-architecture)
 
 ## Introduction
 
