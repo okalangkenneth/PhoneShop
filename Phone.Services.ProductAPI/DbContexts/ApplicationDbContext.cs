@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Phone.Services.ProductAPI.Models;
+using Phone.Services.ProductAPI.Models.Dto;
 
 namespace Phone.Services.ProductAPI.DbContexts
 {
