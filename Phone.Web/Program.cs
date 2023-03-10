@@ -1,7 +1,17 @@
+using Phone.Web;
+using Phone.Web.Services;
+using Phone.Web.Services.IServices;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
+builder.Services.AddHttpClient<IProductService,ProductService>();
+SD.ProductAPIBase = builder.Configuration["ServiceUrls:ProductsAPI"];
+builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 
@@ -20,8 +30,25 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+//app.MapControllerRoute(
+//   name: "default",
+//   pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "product",
+        pattern: "Product/{action=ProductIndex}/{id?}",
+        defaults: new { controller = "ProductController1" });
+
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
 
 app.Run();
+
+
+
+
+
