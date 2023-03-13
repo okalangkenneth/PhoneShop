@@ -15,14 +15,14 @@ namespace Phone.Web.Controllers
         }
 
 
-        public async Task<IActionResult>ProductIndex()
+        public async Task<IActionResult> ProductIndex()
         {
 
             List<ProductDto> list = new();
             var response = await _productService.GetTAllProductsAsync<ResponseDto>();
 
 
-            if(response!=null && response.IsSuccess)
+            if(response != null && response.IsSuccess)
             {
                 list = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(response.Result));
             }
