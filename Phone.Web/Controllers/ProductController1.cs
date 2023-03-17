@@ -29,7 +29,7 @@ namespace Phone.Web.Controllers
             {
                 list = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(response.Result));
             }
-            return View(new List<ProductDto>());
+            return View(list);
             
 
         }
