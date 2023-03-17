@@ -1,6 +1,7 @@
 ﻿// This code defines the ProductAPIController class.
 // The controller handles HTTP requests related to the product entities in the database.
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Phone.Services.ProductAPI.Models;
 using Phone.Services.ProductAPI.Models.Dto;
@@ -22,6 +23,7 @@ namespace Phone.Services.ProductAPI.Controllers
         }
 
         // HTTP GET request to retrieve all product entities from the database.
+        [Authorize]
         [HttpGet]
         public async Task<object> Get()
         {
@@ -38,9 +40,11 @@ namespace Phone.Services.ProductAPI.Controllers
             return _response;
         }
 
-        // HTTP GET request to retrieve a specific product entity from the database by its ID.
-        [HttpGet]
-        [Route("{id}")]
+		// HTTP GET request to retrieve a specific product entity from the database by its ID.
+		
+		[HttpGet]
+		[Authorize]
+		[Route("{id}")]
         public async Task<object> Get(int id)
         {
             try
@@ -57,8 +61,10 @@ namespace Phone.Services.ProductAPI.Controllers
         }
 
         // HTTP POST request to create a new product entity in the database.
+
         [HttpPost]
-        public async Task<object> Post([FromBody] ProductDto productDto)
+		[Authorize]
+		public async Task<object> Post([FromBody] ProductDto productDto)
         {
             try
             {
@@ -75,7 +81,8 @@ namespace Phone.Services.ProductAPI.Controllers
 
         // HTTP PUT request to update an existing product entity in the database.
         [HttpPut]
-        public async Task<object> Put([FromBody] ProductDto productDto)
+		[Authorize]
+		public async Task<object> Put([FromBody] ProductDto productDto)
         {
             try
             {
@@ -92,7 +99,9 @@ namespace Phone.Services.ProductAPI.Controllers
 
         // HTTP DELETE request to delete a specific product entity from the database by its ID.
         [HttpDelete]
-        public async Task<object> Delete(int id)
+        [Authorize(Roles ="Admin")]
+		[Route("{id}")]
+		public async Task<object> Delete(int id)
         {
             try
             {
