@@ -46,7 +46,7 @@ Explanation of why each technology was chosen
 ## Features
 
 
-## Performance,Security, and Reliability
+## Performance Security and Reliability
 
 The Non-Functional Requirements section describes the quality attributes that the system must possess in addition to its functional requirements. These attributes are critical to ensuring that the system performs optimally, is reliable, and is easy to maintain. In this section, we describe the non-functional requirements for our e-commerce application, including performance, security, scalability, reliability, maintainability, usability, testability, accessibility, and technology requirements. These requirements will be used to guide the design, development, and testing of the system and ensure that it meets the expectations of its users.
 ## Contribution
