@@ -9,8 +9,8 @@
 6. [Features](#features)
 7. [Roadmap](#roadmap)
 8. [Contribution](#contribution)
-8 .[License](#license)
-9 .[Acknowledgment](#acknowledgment)
+9 .[License](#license)
+10 .[Acknowledgment](#acknowledgment)
 
 ## Project Description
 
