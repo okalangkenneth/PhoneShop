@@ -51,7 +51,19 @@ The microservices will be designed using the N-Layer implementation with the Rep
 
 ## Code Structure
 Provide an overview of your code structure and organization. Explain the purpose and responsibilities of each directory and file in your project. You can include a tree structure to make it more visually appealing.
+
 ## Features
+### Identity Server Integration:
+Identity Server to handle user authentication, authorization, and management.
+
+The screenshot below demonstrating how a user is redirected to the Identity Server login page when they try to access a protected resource in this case the product.
+
+![image](https://user-images.githubusercontent.com/68539411/227057065-f5ce936a-d793-48d3-b191-28e4a34409dd.png)
+
+and how they can access the resources after they have authenticated.
+
+![image](https://user-images.githubusercontent.com/68539411/227058104-cae0eb7a-f4b2-4764-8c4b-207530982bfc.png)
+
 List the features and functionalities of your application. You can include screenshots or GIFs to demonstrate how each feature works.
 ## Roadmap
 Include a roadmap for future development and features. Explain what you plan to add or improve in future releases and when users can expect them.
