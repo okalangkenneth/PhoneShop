@@ -40,18 +40,18 @@ The microservices will be designed using the N-Layer implementation with the Rep
 
 ## Technologies Used
 
-Microservices architecture
-Identity Server
-Azure Service Bus
-N-Layer implementation
-Repository Pattern
-Entity Framework Core
-SQL Server database
-ASP.NET Core
-Docker
-Swagger
-Visual Studio
-Git
+- Microservices architecture
+- Identity Server
+- Azure Service Bus
+- N-Layer implementation
+- Repository Pattern
+- Entity Framework Core
+- SQL Server database
+- ASP.NET Core
+- Docker
+- Swagger
+- Visual Studio
+- Git
 
 ## Features
 
