@@ -2,15 +2,15 @@
 
 ## Table of Contents.
 1. [Project Description](#project-description)
-2. [Installation Instructions](#Installation-instructions)
-3. [Usage Instructions](#usage-instructions)
-4. [Project Structure](#project-structure)
-5. [Technologies Used](#technologies-used)
+2. [Technologies Used](#technologies-used)
+3. [Getting Started](#getting-started)
+4. [Architecture Overview](#architecture-overview)
+5. [Code Structure](#code-structure)
 6. [Features](#features)
-7. [Performance Security and Reliability](#performance-security-and-reliability)
+7. [Roadmap](#roadmap)
 8. [Contribution](#contribution)
-9. [License](#license)
-10.[Acknowledgment](#acknowledgment)
+8 .[License](#license)
+9 .[Acknowledgment](#acknowledgment)
 
 ## Project Description
 
@@ -21,22 +21,6 @@ This project emphasizes the importance of the backend architecture and focuses o
 The project will prioritize non-functional requirements such as performance, security, availability, and reliability, ensuring that the backend system can handle high traffic and provide a seamless user experience. By the end of the project, we aim to develop a robust and scalable e-commerce application that meets modern business requirements and showcases the benefits of microservices architecture, Identity Server, Azure Service Bus, N-Layer implementation, Repository Pattern, Async and Sync communication, and Entity Framework Core with a SQL Server database.
 
 In summary, this backend project is a comprehensive solution for businesses of all sizes looking to build a scalable and secure e-commerce platform.
-
-
-## Installation Instructions
-
-## Usage Instructions
-
-Description of the implementation process
-Explanation of the coding standards and conventions used
-Overview of the features implemented in the application
-## Project Structure
-
-![image](https://user-images.githubusercontent.com/68539411/223565684-642f3c07-fdc7-4881-b000-70360f859577.png)
-
-This diagram shows the different components of the e-commerce application and how they communicate with each other. Each of the microservices will have its own database. The microservices communicate with each other through RESTful APIs or message queues. The dotted lines indicate asynchronous while the solid lines indicate synchronous communication. The Identity Server provides a centralized authentication and authorization mechanism for the microservices ensuring that the application is secure and compliant. Azure Service Bus enables messaging and communication between the microservices, ensuring that the application is highly available and reliable.
-The microservices will be designed using the N-Layer implementation with the Repository Pattern, ensuring that the business logic and data access layers are separated.
-
 
 ## Technologies Used
 
@@ -53,20 +37,25 @@ The microservices will be designed using the N-Layer implementation with the Rep
 - Visual Studio
 - Git
 
+
+## Getting Started
+
+Provide instructions for users to set up and run your project locally. Include any dependencies, environment variables, and configuration settings required. You can also provide a step-by-step guide to deploying your project to a production environment.
+
+## Architecture Overview
+
+![image](https://user-images.githubusercontent.com/68539411/223565684-642f3c07-fdc7-4881-b000-70360f859577.png)
+
+This diagram shows the different components of the e-commerce application and how they communicate with each other. Each of the microservices will have its own database. The microservices communicate with each other through RESTful APIs or message queues. The dotted lines indicate asynchronous while the solid lines indicate synchronous communication. The Identity Server provides a centralized authentication and authorization mechanism for the microservices ensuring that the application is secure and compliant. Azure Service Bus enables messaging and communication between the microservices, ensuring that the application is highly available and reliable.
+The microservices will be designed using the N-Layer implementation with the Repository Pattern, ensuring that the business logic and data access layers are separated.
+
+## Code Structure
+
 ## Features
 
+## Roadmap
 
-## Performance Security and Reliability
-
-The Non-Functional Requirements section describes the quality attributes that the system must possess in addition to its functional requirements. These attributes are critical to ensuring that the system performs optimally, is reliable, and is easy to maintain. In this section, we describe the non-functional requirements for our e-commerce application, including performance, security, scalability, reliability, maintainability, usability, testability, accessibility, and technology requirements. These requirements will be used to guide the design, development, and testing of the system and ensure that it meets the expectations of its users.
 ## Contribution
-
-## Conclusion
-
-## Summary of the project
-
-Lessons learned and future improvements
-Possible directions for further development
 
 ## License
 
