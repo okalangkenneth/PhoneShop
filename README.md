@@ -1,4 +1,4 @@
-# EcomGateway Backend: A Microservice-based E-commerce Gateway with Identity Server and Azure Service Bus Integration
+# A Microservice-based E-commerce Gateway with Identity Server and Azure Service Bus Integration
 
 ## Table of Contents.
 1. [Introduction](#introduction)
