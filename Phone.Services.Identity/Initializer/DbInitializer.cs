@@ -40,7 +40,7 @@ namespace Phone.Services.Identity.Initializer
 				EmailConfirmed = true,
 				PhoneNumber = "676767676",
 				FirstName = "Kenneth",
-				LastName = "Okalang"
+				LastName = "Admin"
 			};
 
 			_userManager.CreateAsync(adminUser, "Admin123*").GetAwaiter().GetResult();

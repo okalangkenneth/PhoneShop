@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient<IProductService, ProductService>();
 
 // Set the base URL for accessing the ProductAPI service
-SD.ProductAPIBase = builder.Configuration["ServiceUrls:ProductsAPI"];
+SD.ProductAPIBase = builder.Configuration["ServiceUrls:ProductAPI"];
 
 // Register the ProductService in the dependency injection container
 builder.Services.AddScoped<IProductService, ProductService>();

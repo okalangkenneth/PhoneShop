@@ -3,7 +3,6 @@
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Phone.Services.ProductAPI.Models;
 using Phone.Services.ProductAPI.Models.Dto;
 using Phone.Services.ProductAPI.Repository;
 
@@ -23,7 +22,7 @@ namespace Phone.Services.ProductAPI.Controllers
         }
 
         // HTTP GET request to retrieve all product entities from the database.
-        [Authorize]
+        
         [HttpGet]
         public async Task<object> Get()
         {
@@ -43,7 +42,7 @@ namespace Phone.Services.ProductAPI.Controllers
 		// HTTP GET request to retrieve a specific product entity from the database by its ID.
 		
 		[HttpGet]
-		[Authorize]
+		
 		[Route("{id}")]
         public async Task<object> Get(int id)
         {

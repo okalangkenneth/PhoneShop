@@ -1,23 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Phone.Web.Models
+namespace Phone.Services.ProductAPI.Models.Dto
 {
     public class ProductDto
     {
-        public ProductDto()
-        {
-            Count = 1;
-        }
 
         public int ProductId { get; set; }
+
+
         public string Name { get; set; }
+        [Range(1, 1000)]
         public int Price { get; set; }
         public string Description { get; set; }
         public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
-
-        [Range(1, 100)]
-        public int Count { get; set; }
 
     }
 }

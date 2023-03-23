@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Phone.Services.ProductAPI.Models.Dto
+namespace Phone.Services.ShoppingCartAPI.Models
 {
     public class Product
     {
-        [Key]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductId { get; set; }
 
         [Required]
@@ -14,5 +15,6 @@ namespace Phone.Services.ProductAPI.Models.Dto
         public string Description { get; set; }
         public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
+
     }
 }

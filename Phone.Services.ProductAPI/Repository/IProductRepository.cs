@@ -2,7 +2,7 @@
 // The interface defines the contract for classes that want to interact with the product entities in the database.
 // It includes four methods for retrieving, creating, updating, and deleting product entities.
 
-using Phone.Services.ProductAPI.Models;
+using Phone.Services.ProductAPI.Models.Dto;
 
 namespace Phone.Services.ProductAPI.Repository
 {

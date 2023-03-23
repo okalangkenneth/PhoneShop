@@ -2,11 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Phone.Web.Models;
 using Phone.Web.Services.IServices;
-using System.Collections.Generic;
-using System.Reflection;
 
 namespace Phone.Web.Controllers
 {
@@ -54,7 +51,7 @@ namespace Phone.Web.Controllers
         }
         public async Task<IActionResult> ProductEdit( int productId)
         {
-            List<ProductDto> list = new();
+            
             var accessToken = await HttpContext.GetTokenAsync("access_token");
             var response = await _productService.GetProductByIdAsync<ResponseDto>(productId, accessToken);
             if (response != null && response.IsSuccess)
@@ -69,11 +66,14 @@ namespace Phone.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ProductEdit(ProductDto model)
         {
-            var accessToken = await HttpContext.GetTokenAsync("access_token");
-            var response = await _productService.UpdateProductAsync<ResponseDto>(model, accessToken);
-            if (response != null && response.IsSuccess)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(ProductIndex));
+                var accessToken = await HttpContext.GetTokenAsync("access_token");
+                var response = await _productService.UpdateProductAsync<ResponseDto>(model, accessToken);
+                if (response != null && response.IsSuccess)
+                {
+                    return RedirectToAction(nameof(ProductIndex));
+                }
             }
             return View(model);
         }
@@ -96,13 +96,16 @@ namespace Phone.Web.Controllers
         [ValidateAntiForgeryToken]
 		public async Task<IActionResult> ProductDelete(ProductDto model)
 		{
-            var accessToken = await HttpContext.GetTokenAsync("access_token");
-            var response = await _productService.DeleteProductAsync<ResponseDto>(model.ProductId, accessToken);
-			if (response.IsSuccess)
-			{
-				return RedirectToAction(nameof(ProductIndex));
-			}
-			return View(model);
-		}
+            if (ModelState.IsValid)
+            {
+                var accessToken = await HttpContext.GetTokenAsync("access_token");
+                var response = await _productService.DeleteProductAsync<ResponseDto>(model.ProductId, accessToken);
+                if (response.IsSuccess)
+                {
+                    return RedirectToAction(nameof(ProductIndex));
+                }
+            }
+            return View(model);
+        }
 	}
 }
