@@ -1,4 +1,5 @@
 
+using Microsoft.AspNetCore.Authentication;
 using Phone.Web;
 using Phone.Web.Services;
 using Phone.Web.Services.IServices;
@@ -10,12 +11,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Register the HTTP client service for accessing the ProductAPI service
 builder.Services.AddHttpClient<IProductService, ProductService>();
+// Register the HTTP client service for accessing the ShoppingCartAPI service
+builder.Services.AddHttpClient<ICartService, CartService>();
 
 // Set the base URL for accessing the ProductAPI service
 SD.ProductAPIBase = builder.Configuration["ServiceUrls:ProductAPI"];
+SD.ShoppingCartAPIBase = builder.Configuration["ServiceUrls:ShoppingCartAPI"];
 
 // Register the ProductService in the dependency injection container
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICartService, CartService>();
 
 // Register the MVC framework's controller and views services in the container
 builder.Services.AddControllersWithViews();
@@ -41,8 +46,10 @@ builder.Services.AddAuthentication(options =>
 		options.ClientId = "phone";
 		options.ClientSecret = "secret";
 		options.ResponseType = "code";
-		// Map user claims to the correct names
-		options.TokenValidationParameters.NameClaimType = "name";
+        options.ClaimActions.MapJsonKey("role", "role", "role");
+        options.ClaimActions.MapJsonKey("sub", "sub", "sub");
+        // Map user claims to the correct names
+        options.TokenValidationParameters.NameClaimType = "name";
 		options.TokenValidationParameters.RoleClaimType = "role";
 		// Add the "phone" scope to the access token request
 		options.Scope.Add("phone");
@@ -79,9 +86,13 @@ app.UseAuthorization();
 
 // Map endpoints to controllers and actions
 app.UseEndpoints(endpoints =>
+
 {
-	// Map the "product" endpoint to the ProductController1 controller's ProductIndex action
-	endpoints.MapControllerRoute(
+    
+
+
+    // Map the "product" endpoint to the ProductController1 controller's ProductIndex action
+    endpoints.MapControllerRoute(
 		name: "product",
 		pattern: "Product/{action=ProductIndex}/{id?}",
 		defaults: new { controller = "ProductController1" });

@@ -5,7 +5,7 @@ using Phone.Services.ShoppingCartAPI.Repository;
 
 namespace Phone.Services.ShoppingCartAPI.Controllers
 {
-    [Route("api/[cart]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class CartController : Controller
     {
